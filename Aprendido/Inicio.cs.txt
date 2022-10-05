@@ -1,0 +1,41 @@
+using Microsoft.AspNetCore.Mvc;
+
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+app.MapGet("/", () => "Hello World 5!");
+app.MapPost("/", () =>new {Name = "JR", Age = 20});
+app.MapGet("/AddHeader", (HttpResponse response) => {
+    response.Headers.Add("Test", "JR");
+    return new {Name = "JR", Age = 20};
+});
+
+app.MapPost("/saveproduct", (Product product) => {
+    return product.Code + " - " + product.Name;
+});
+
+//froum url
+// froum query paramentro
+//api.app.com/users?datastart={date}&dataend={date}
+app.MapGet("/getproduct", ([FromQuery] string dateStart, [FromQuery] string dateEnd) => {
+    return dateStart + " - " + dateEnd;
+});
+// froum route
+//api.app.com/user/{code}
+app.MapGet("/getproduct/{code}", ([FromRoute] string code) => {
+    return code;
+});
+
+//froum header
+app.MapGet("/getproductbyheader", (HttpRequest request) => {
+    return request.Headers["product"].ToString();
+});
+
+app.Run();
+
+
+//Class: uma string avançada.
+public class Product {
+    public string Code { get; set; }
+    public string Name { get; set; }
+}

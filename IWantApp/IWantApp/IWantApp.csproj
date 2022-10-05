@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+      <PropertyGroup>
+            <TargetFramework>net6.0</TargetFramework>
+            <Nullable>enable</Nullable>
+            <ImplicitUsings>enable</ImplicitUsings>
+      </PropertyGroup>
+
+	   <ItemGroup>
+	       <using Include="Microsoft.AspNetCore.Identity" />
+		   <using Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" />
+		   <using Include="Microsoft.EntityFrameworkCore" />
+		   <using Include="Microsoft.AspNetCore.Authorization" />
+		   <using Include="Microsoft.AspNetCore.Mvc" />
+		   <using Include="Microsoft.IdentityModel.Tokens" />
+		   <using Include="Microsoft.AspNetCore.Authentication.JwtBearer" />
+		   <using Include="System.IdentityModel.Tokens.Jwt" />
+		   <using Include="System.Text" />
+		   <using Include="Microsoft.Data.SqlClient;" />
+		   <using Include="System.Security.Claims" />
+		   <using Include="Flunt.Notifications" />
+		   <using Include="Flunt.Validations;" />
+		   <using Include="Dapper" />
+		   
+	       <using Include="IWantApp.Endpoints.Categories" />
+		   <using Include="IWantApp.Endpoints.Segurity" />
+	       <using Include="IWantApp.Domain.Products" />
+	       <using Include="IWantApp.Infra.Data" />
+		   <using Include="IWantApp.Endpoints.Employees" />
+	       
+	   </ItemGroup>
+
+       <ItemGroup>
+            <PackageReference Include="Dapper" Version="2.0.123" />
+            <PackageReference Include="Flunt" Version="2.0.5" />
+            <PackageReference Include="Microsoft.AspNet.Identity.EntityFramework" Version="2.2.3" />
+            <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.8" />
+            <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.8" />
+            <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.8" />
+            <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.8">
+                <PrivateAssets>all</PrivateAssets>
+                <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+            </PackageReference>
+            <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.8" />
+            <PackageReference Include="Serilog.AspNetCore" Version="6.0.1" />
+            <PackageReference Include="Serilog.Sinks.MSSqlServer" Version="5.7.1" />
+            <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+      </ItemGroup>
+
+      <ItemGroup>
+        <EditorConfigFiles Remove="C:\Users\mmotta\.NET\IWantApp\IWantApp\.editorconfig" />
+      </ItemGroup>
+
+      <ItemGroup>
+        <None Include="C:\Users\mmotta\.NET\IWantApp\IWantApp\.editorconfig" />
+      </ItemGroup>
+
+</Project>
